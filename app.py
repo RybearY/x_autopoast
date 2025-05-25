@@ -118,7 +118,7 @@ if 'keywords' in st.session_state:
             image_resp = client.images.generate(
                 model="dall-e-3",
                 prompt=dalle_prompt,
-                n=2,  # 여러 장 생성
+                n=1,  # 1장 생성
                 size="1024x1024"
             )
             for idx, img in enumerate(image_resp.data):
