@@ -118,13 +118,8 @@ if 'keywords' in st.session_state:
             image_resp = client.images.generate(
                 model="dall-e-3",
                 prompt=dalle_prompt,
-                n=1,  # 1장 생성
+                n=1,
                 size="1024x1024"
             )
-            for idx, img in enumerate(image_resp.data):
-                st.image(img.url, caption=f"생성된 이미지 {idx+1}")
-
-    # 리셋 버튼(항상 노출)
-    if st.button("새로운 키워드로 다시 시작"):
-        st.session_state.clear()
-        st.rerun()
+            image_url = image_resp.data[0].url  # 한 장만 반환됨
+            st.image(image_url, caption="생성된 이미지")
