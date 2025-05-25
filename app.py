@@ -114,7 +114,7 @@ if 'keywords' in st.session_state:
         st.write(tweet_ko)
 
         if post_type == "이미지":
-            dalle_prompt = f"일본의 '{selected_trend}'와 관련된, 귀엽고 아기자기한 스타일의 일러스트"
+            dalle_prompt = f"일본의 '{selected_trend}'와 관련된 주제를 중심으로 한, 파스텔톤의 귀엽고 아기자기한 스타일의 일러스트. 등장인물이나 소품이 동글동글하고 사랑스럽게 표현되어 있으며, 배경은 주제와 자연스럽게 어우러져 따뜻하고 행복한 분위기를 연출. 최신 일본 트렌드를 반영한 오늘의 테마. 고해상도, 텍스트 없음, 트위터 게시물에 최적화된 정사각형(1:1) 또는 4:5 비율."
             image_resp = client.images.generate(
                 model="dall-e-3",
                 prompt=dalle_prompt,
